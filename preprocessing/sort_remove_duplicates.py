@@ -32,6 +32,7 @@ for row in data:
 				row[i] = row[i].replace("'",'"').replace("None", "0")
 				row_json = json.loads(row[i])
 				for key, value in row_json.items():
+					if value 
 					new_sign[key] = value
 				print(new_sign)
 				merge_data[i] = json.dumps(curr_pleth)
