@@ -1,6 +1,6 @@
 import csv
-
-fieldnames = ['timestamp','ECG','Heart Rate','Respiration Rate','Airway','Pleth','SpO2','Non-invasive Blood Pressure','qos','alarms']
+# (['timestamp','ECG','Heart Rate','Respiration Rate','alarms','Airway','Pleth','SpO2','Non-invasive Blood Pressure','qos'])
+fieldnames = ['timestamp', 'ECG', 'Respiration Rate','SpO2','Pleth','Heart Rate','Airway','Non-invasive Blood Pressure', 'qos', 'alarms']
 writer = csv.DictWriter(open('../../clean_data/5_25-5_26_ECG.csv','w'), fieldnames=fieldnames)
 good_data = csv.DictReader(open("../../clean_data/5_25-5_26_good.csv"), delimiter=',')
 
