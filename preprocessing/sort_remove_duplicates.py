@@ -58,4 +58,20 @@ for row in data:
 		if row[-1]:
 			merge_data[-1] = row[-1]
 g.writerow(merge_data)
+g.writerow(['timestamp','ECG','Respiration Rate','SpO2','Pleth','Heart Rate','Airway','Non-invasive Blood Pressure','qos','alarms'])
+
+data = csv.reader(open('../../clean_data/5_25-5_26_ECG_sorted_unique.csv', 'r'))
+for row in data:
+	# if row[2] or row[3] or row[5] or row[6] != "{'Respiration Rate': None, 'etCO2': None}" or row[7] != "{'mean': None, 'systolic': None, 'diastolic': None}":
+	# 	if row[9]:
+	# 		print("row['ECG'], row['Respiration Rate'], row['SpO2'], row['Heart Rate'], row['Airway'], row['Non-invasive Blood Pressure'] = ", row[2], row[3], row[5], row[6], row[7], row[9])
+	# 	else:
+	# 		print("YOOOO")
+	if row[1] or row[4]:
+		# print("alarms = ", row[9])
+		if row[9]:
+			print("row['ECG'], row['Respiration Rate'], row['SpO2'], row['Heart Rate'], row['Airway'], row['Non-invasive Blood Pressure'] = ", row['Respiration Rate'], row['SpO2'], row['Heart Rate'], row['Airway'], row['Non-invasive Blood Pressure'])
+		if row[2] or row[3] or row[5] or row[6] != "{'Respiration Rate': None, 'etCO2': None}" or row[7] != "{'mean': None, 'systolic': None, 'diastolic': None}":
+			print("row['ECG'], row['Respiration Rate'], row['SpO2'], row['Heart Rate'], row['Airway'], row['Non-invasive Blood Pressure'] = ", row['Respiration Rate'], row['SpO2'], row['Heart Rate'], row['Airway'], row['Non-invasive Blood Pressure'])
+
 

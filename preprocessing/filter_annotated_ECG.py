@@ -15,8 +15,11 @@ good_data = csv.DictReader(open("../../clean_data/5_25-5_26_good.csv"), delimite
 
 
 for row in good_data:
-    if row["alarms"] is '': 
-        writer.writerow(row)
-    elif "'string': 'ECG'" in row["alarms"]:
-        row["alarms"] = "ECG"
-        writer.writerow(row)
+	# if row['Respiration Rate'] or row['SpO2'] or row['Heart Rate'] or row['Airway'] != "{'Respiration Rate': None, 'etCO2': None}" or row['Non-invasive Blood Pressure'] != "{'mean': None, 'systolic': None, 'diastolic': None}":
+		# if row['ECG'] or row['Pleth']:
+			# print("row['ECG'], row['Respiration Rate'], row['SpO2'], row['Heart Rate'], row['Airway'], row['Non-invasive Blood Pressure'] = ", row['Respiration Rate'], row['SpO2'], row['Heart Rate'], row['Airway'], row['Non-invasive Blood Pressure'])
+	if row["alarms"] is '':
+		writer.writerow(row)
+	elif "'string': 'ECG'" in row["alarms"]:
+		row["alarms"] = "ECG"
+		writer.writerow(row)
